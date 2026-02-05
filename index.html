@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>3D Gallery Portfolio</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Three.js goes here -->
+    <canvas id="c"></canvas>
+
+    <!-- Prompt -->
+    <div id="hint" class="hint hidden">View Full Screen</div>
+
+    <!-- Fullscreen overlay -->
+    <div id="overlay" class="overlay hidden" role="dialog" aria-modal="true">
+      <button id="closeBtn" class="close" aria-label="Close">×</button>
+      <img id="overlayImg" alt="Full screen photo" />
+    </div>
+
+    <!-- Joystick UI (bottom-right) -->
+    <div id="joystick" class="joy">
+      <div id="joyBase" class="joy-base">
+        <div id="joyKnob" class="joy-knob"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ES Modules importmap -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
